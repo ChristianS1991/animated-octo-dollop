@@ -19,7 +19,9 @@ df["voucherAmount"] = df["voucherAmount"].astype(np.int64)
 
 #preprocessing
 df = pm.add_voucher_present(df)
-df = pm.price_difference(df)
+df = pm.price_difference_and_ratio(df)
 df = pm.total_order_size(df)
-print(df.head())
+df = pm.total_order_price(df)
+df = pm.weekend_weekday_month_day(df)
+print(df.tail())
 
