@@ -3,6 +3,7 @@ __author__ = 'Christian'
 import pandas as pd
 import numpy as np
 from scripts import preprocessing_methods as pm
+from scripts import preprocessing_utility as pu
 
 # readData
 df = pd.read_csv("../data/orders_train.txt", header=0, sep=';', na_values="NA")
@@ -25,3 +26,6 @@ df = pm.total_order_price(df)
 df = pm.weekend_weekday_month_day(df)
 print(df.tail())
 
+
+#save as csv
+pu.save_as_csv(df, "jens_test")
